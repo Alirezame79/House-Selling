@@ -1,54 +1,35 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { Icon } from "leaflet";
+import "leaflet/dist/leaflet.css";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
-const center = {
-  lat: 51.505,
-  lng: -0.09,
-}
+const location = [35.743918, 51.251342]
+
+const customIcon = new Icon({
+  iconUrl: "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-marker-512.png",
+  iconSize: [50, 50]
+})
 
 export default function Leaflet() {
 
   return (
-    <MapContainer className="border-2 border-black" center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-      <TileLayer
+    <MapContainer className="m-auto w-2/3 h-96" center={[location[0], location[1]]} zoom={13} scrollWheelZoom={false}>
+      <TileLayer 
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
       <DraggableMarker />
     </MapContainer>
   )
 }
 
 function DraggableMarker() {
-  const [draggable, setDraggable] = useState(false)
-  const [position, setPosition] = useState(center)
-  const markerRef = useRef(null)
-  const eventHandlers = useMemo(
-    () => ({
-      dragend() {
-        const marker = markerRef.current
-        if (marker != null) {
-          // setPosition(marker.getLatLng())
-        }
-      },
-    }),
-    [],
-  )
-  const toggleDraggable = useCallback(() => {
-    setDraggable((d) => !d)
-  }, [])
   return (
     <Marker
-      draggable={draggable}
-      eventHandlers={eventHandlers}
-      position={position}
-      ref={markerRef}>
+      draggable={true}
+      position={[location[0], location[1]]}
+      icon={customIcon}
+      >
       <Popup minWidth={90}>
-        <span onClick={toggleDraggable}>
-          {draggable
-            ? 'Marker is draggable'
-            : 'Click here to make marker draggable'}
-        </span>
+        نشانگر آدرس ملک را نمایش می دهد
       </Popup>
     </Marker>
   )
