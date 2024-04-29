@@ -1,17 +1,20 @@
 import React from 'react';
-import Advertising from './components/cards/Advertising';
+import AddAdvertising from './components/AddAdvertising';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AdvertisingsList from './components/AdvertisingsList';
+import NotFound from './components/NotFound';
 
 function App() {
 
   return (
-    <div className='min-h-screen bg-amber-50 md:p-2 p-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-content-start'>
-      <Advertising />
-      <Advertising />
-      <Advertising />
-      <Advertising />
-      <Advertising />
-      <Advertising />
-      <Advertising />
+    <div className='min-h-screen bg-amber-50'>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<AdvertisingsList />} />
+          <Route path="/add-advertising" element={<AddAdvertising />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
