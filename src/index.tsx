@@ -4,13 +4,17 @@ import './index.css';
 import App from './App';
 import Header from './components/layouts/Header';
 import Footer from './components/layouts/Footer';
+import store from './store/store';
+import { Provider } from 'react-redux';
 
 ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 ).render(
   <React.StrictMode>
-    <Header />
-    <App />
-    <Footer />
+    <Provider store={store}>
+      <Header />
+      <App />
+      <Footer />
+    </Provider>
   </React.StrictMode>
 );

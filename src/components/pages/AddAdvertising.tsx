@@ -1,5 +1,5 @@
-import Input from "./ui/Input";
-import Leaflet from "./Leaflet";
+import Input from "../ui/Input";
+import Leaflet from "../Leaflet";
 
 export default function AddAdvertising() {
 
