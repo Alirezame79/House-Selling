@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { advertising } from "../../types/advertising";
-import Leaflet from "../Leaflet";
+import Leaflet from "../widget/Leaflet";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { setValue } from "../../store/slices/advertising";
 

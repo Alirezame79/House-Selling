@@ -6,15 +6,18 @@ import Header from './components/layouts/Header';
 import Footer from './components/layouts/Footer';
 import store from './store/store';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 ).render(
   <React.StrictMode>
     <Provider store={store}>
-      <Header />
-      <App />
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        <App />
+        <Footer />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

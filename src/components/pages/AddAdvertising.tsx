@@ -1,5 +1,6 @@
-import Input from "../ui/Input";
-import Leaflet from "../Leaflet";
+import Button from "../widget/Button";
+import Input from "../widget/Input";
+import Leaflet from "../widget/Leaflet";
 
 export default function AddAdvertising() {
 
@@ -21,9 +22,9 @@ export default function AddAdvertising() {
         </div>
         <div className="flex flex-col gap-2 p-5 w-full m-auto">
           <label className="text-center" htmlFor="map">با نشانگر روی نقشه مشخص کنید</label>
-          <Leaflet />
+          <Leaflet location={[35.743918, 51.251342]} draggable={true}/>
         </div>
-        <button className="bg-amber-300 hover:bg-amber-200 rounded-lg text-lg font-bold w-1/4 p-3 m-auto">ثبت آگهی</button>
+        <Button className="w-1/4 m-auto">ثبت آگهی</Button>
       </form>
     </div>
   )

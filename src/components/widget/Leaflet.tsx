@@ -8,7 +8,7 @@ const customIcon = new Icon({
   iconSize: [50, 50],
 });
 
-export default function Leaflet({ location }: any) {
+export default function Leaflet({ location, draggable }: any) {
   return (
     <MapContainer
       className="m-auto w-2/3 h-96"
@@ -19,7 +19,7 @@ export default function Leaflet({ location }: any) {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={location} icon={customIcon}>
+      <Marker draggable={draggable} position={location} icon={customIcon}>
         <Popup minWidth={90}>نشانگر آدرس ملک را نمایش می دهد</Popup>
       </Marker>
     </MapContainer>

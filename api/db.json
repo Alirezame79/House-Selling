@@ -2,16 +2,19 @@
   "users": [
     {
       "id": "1001",
+      "email": "Alireza@gmail.com",
       "username": "Alireza",
       "password": "root"
     },
     {
       "id": "1002",
+      "email": "root@gmail.com",
       "username": "root",
       "password": "root"
     },
     {
       "id": "1003",
+      "email": "Amir@gmail.com",
       "username": "Amir",
       "password": "amir-rpo"
     }
@@ -83,16 +86,5 @@
       ],
       "creator": "1003"
     }
-  ],
-  "2001": {
-    "id": "2001",
-    "address": "تهران - زعفرانیه - کوچه چهارم",
-    "phone": "۰۹۳۸۲۵۴۱۵۸۹",
-    "description": "متراژ ۱۵۰ متری - دارای دو اتاق خواب و یک استخر",
-    "location": [
-      35.80630700795731,
-      51.415015875897346
-    ],
-    "creator": "1001"
-  }
+  ]
 }
