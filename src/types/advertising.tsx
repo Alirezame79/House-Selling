@@ -4,5 +4,4 @@ export interface advertising {
   address: string;
   phone: string;
   description: string;
-  creator: string;
 }

@@ -4,11 +4,10 @@ import { advertising } from "../../types/advertising";
 const initialState: advertising = {
   id: "",
   address: "",
-  creator: "",
   description: "",
   location: [35.743918, 51.251342],
-  phone: ""
-}
+  phone: "",
+};
 
 export const advertisingSlice = createSlice({
   name: "advertising",
@@ -16,9 +15,9 @@ export const advertisingSlice = createSlice({
   reducers: {
     setValue: (state, action) => {
       return action.payload;
-    }
-  }
-})
+    },
+  },
+});
 
 export const { setValue } = advertisingSlice.actions;
 export default advertisingSlice.reducer;
