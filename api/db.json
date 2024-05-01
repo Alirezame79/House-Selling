@@ -17,6 +17,23 @@
       "email": "Amir@gmail.com",
       "username": "Amir",
       "password": "amir-rpo"
+    },
+    {
+      "id": "4a0f",
+      "email": "root@gmail.com",
+      "password": "root"
+    },
+    {
+      "id": "9dd2",
+      "username": "asd",
+      "email": "asd",
+      "password": "asd"
+    },
+    {
+      "id": "e5fc",
+      "username": "asd",
+      "email": "asd",
+      "password": "asd"
     }
   ],
   "advertisings": [

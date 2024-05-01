@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { advertisingSlice } from "./slices/advertising";
+import { profileSlice } from "./slices/profile";
 
 const store = configureStore({
   reducer: {
-    advertising: advertisingSlice.reducer
+    advertising: advertisingSlice.reducer,
+    profile: profileSlice.reducer
   },
 });
 
