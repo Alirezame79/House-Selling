@@ -22,17 +22,21 @@ export default function Login() {
     }
 
     axios
-      .post("http://localhost:3001/users/" + emailRef?.current?.value, {
-        email: emailRef?.current?.value,
-        password: passwordRef?.current?.value,
-      })
+      .get(
+        "http://localhost:3001/users?email=" +
+          emailRef?.current?.value +
+          "&password=" +
+          passwordRef?.current?.value
+      )
       .then(function (response) {
         console.log(response);
-        if (response.status === 201) {
+        if (response.status === 200 && response.data.length !== 0) {
           dispatch(setProfile(true));
           localStorage.setItem("login", "1");
-          toast.success("حساب کاربری با موفقیت ساخته شد.");
+          toast.success("وارد حساب کابری شدید.");
           navigate("/");
+        } else {
+          toast.error("مشکلی رخ داده است.");
         }
       })
       .catch(function (error) {
